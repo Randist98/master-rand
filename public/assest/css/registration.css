@@ -1,0 +1,150 @@
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+*,*:before,*:after{box-sizing:border-box}
+
+body{
+  min-height:100vh;
+  font-family: 'Raleway', sans-serif;
+}
+
+.container{
+  position:absolute;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+
+  &:hover,&:active{
+    .top, .bottom{
+      &:before, &:after{
+        margin-left: 250px;
+        transform-origin: -250px 50%;
+        transition-delay:0s;
+      }
+    }
+
+    .center{
+    opacity:1;
+    transition-delay:0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    text-align: center; /* Align text center */
+    }
+  }
+}
+
+.top, .bottom{
+  &:before, &:after{
+    content:'';
+    display:block;
+    position:absolute;
+    width:200vmax;
+    height:200vmax;
+    top:50%;left:50%;
+    margin-top:-100vmax;
+    transform-origin: 0 50%;
+    transition:all 0.5s cubic-bezier(0.445, 0.05, 0, 1);
+    z-index:10;
+    opacity:0.65;
+    transition-delay:0.2s;
+  }
+}
+
+.top{
+  &:before{transform:rotate(45deg);background:rgb(89, 136, 107);}
+  &:after{transform:rotate(135deg);background:rgb(255, 200, 92);}
+}
+
+.bottom{
+  &:before{transform:rotate(-45deg);background:rgb(255, 200, 92);}
+  &:after{transform:rotate(-135deg);background:rgb(89, 136, 107);}
+}
+
+.center{
+  position:absolute;
+  width:400px;
+  height:400px;
+  top:50%;left:50%;
+  margin-left:-200px;
+  margin-top:-200px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding:30px;
+  opacity:0;
+  transition:all 0.5s cubic-bezier(0.445, 0.05, 0, 1);
+  transition-delay:0s;
+  color:#333;
+
+  input{
+    width:100%;
+    padding:15px;
+    margin:5px;
+    border-radius:1px;
+    border:1px solid #ccc;
+    font-family:inherit;
+  }
+}
+
+/* .social-container {
+	margin: 20px 0;
+}
+
+.social-container a {
+	border: 1px solid #DDDDDD;
+	border-radius: 50%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 5px;
+	height: 40px;
+	width: 40px;
+} */
+
+/* Add these CSS rules to your existing stylesheet */
+.social-container {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-container a {
+    border: 1px solid #DDDDDD;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    height: 40px;
+    width: 40px;
+    color: #007bff; /* Change to the desired color */
+    background-color: #f2f2f2;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.social-container a:hover {
+    background-color: #ddd;
+    color: #0056b3;
+}
+
+/* You can customize the icon size using font-size property */
+.social-container .fab {
+    font-size: 20px;
+}
+
+ .social1 i {
+            color: #3b5998; /* Facebook blue */
+        }
+
+        .social2 i {
+            color: #db4a39; /* Google red */
+        }
+
+        .social3 i {
+            color: #0077b5; /* LinkedIn blue */
+        }
